@@ -1,3 +1,59 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.container {
+  background-color: #F0F0F0;
+  display: flex;
+  justify-content: center;
+  padding: 5% 0;
+  height: 100vh;
+}
+
+.list {
   text-align: left;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  overflow-y: scroll;
+  width: 65vw;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+h1 {
+  font-family: 'Raleway';
+  margin-bottom: 15px;
+  font-size: 55px;
+}
+
+p {
+  font-family: 'Raleway';
+  font-weight: 200;
+  font-size: 20px;
+  margin: 0 0 5px 30px;
+}
+
+.student {
+  display: flex;
+  align-items: center;
+  padding: 10px 25px;
+  border-bottom: 2px solid #F8F6F8;
+}
+
+img {
+  width: 150px;
+  border-radius: 50%;
+  border: 1.5px solid #DBDBDD;
+}
+
+.info {
+  margin-left: 3%;
+  white-space: nowrap;
 }

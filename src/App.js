@@ -18,17 +18,21 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className='container'>
+       <div className="list">
       {state.map((student, i) => (
-        <div key={i}>
+        <div className='student' key={i}>
           <img src={student.pic} alt='headshot' />
-          <h3>{`${student.firstName} ${student.lastName}`}</h3>
-          <p>Email: {student.email}</p>
-          <p>Company: {student.company}</p>
-          <p>Skill: {student.skill}</p>
-          <p>Average: {average(student.grades)}%</p>
+            <div className='info'>
+              <h1>{`${student.firstName.toUpperCase()} ${student.lastName.toUpperCase()}`}</h1>
+              <p>Email: {student.email}</p>
+              <p>Company: {student.company}</p>
+              <p>Skill: {student.skill}</p>
+              <p>Average: {average(student.grades)}%</p>
+            </div>
         </div>
       ))}
+    </div>
     </div>
   );
 }
