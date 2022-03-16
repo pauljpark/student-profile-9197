@@ -1,37 +1,28 @@
 import { useEffect, useState } from 'react';
+import List from './components/List'
 import './App.css';
 
 function App() {
-  const [state, setState] = useState([])
+  const [list, setList] = useState([])
+  const [ searchName, setSearchName ] = useState('')
 
   useEffect(() => {
     fetch('https://api.hatchways.io/assessment/students')
     .then(res => res.json())
-    .then(data => setState(data.students))
+    .then(data => setList(data.students))
   })
 
-  const average = (gradesArray) => {
-    var foo = gradesArray.map((item) => {
-      return parseInt(item, 10)
-    })
-    return foo.reduce((a, b) => a + b) / gradesArray.length
+  const handleOnChange = (e) => {
+    setSearchName(e.target.value)
   }
 
   return (
     <div className='container'>
-       <div className="list">
-      {state.map((student, i) => (
-        <div className='student' key={i}>
-          <img src={student.pic} alt='headshot' />
-            <div className='info'>
-              <h1>{`${student.firstName.toUpperCase()} ${student.lastName.toUpperCase()}`}</h1>
-              <p>Email: {student.email}</p>
-              <p>Company: {student.company}</p>
-              <p>Skill: {student.skill}</p>
-              <p>Average: {average(student.grades)}%</p>
-            </div>
+      <div className="list">
+        <div className='input-container'>
+          <input placeholder='Search by name' onChange={handleOnChange}/>
         </div>
-      ))}
+        <List list={list} searchName={searchName} />
     </div>
     </div>
   );

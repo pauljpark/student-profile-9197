@@ -49,6 +49,7 @@ p {
 
 img {
   width: 150px;
+  height: 150px;
   border-radius: 50%;
   border: 1.5px solid #DBDBDD;
 }
@@ -56,4 +57,54 @@ img {
 .info {
   margin-left: 3%;
   white-space: nowrap;
+}
+
+.input-container {
+  padding: 0 10px;
+}
+
+input {
+  border: 0;
+  border-bottom: 2px solid #DBDBDD;
+  width: 100%;
+  padding: 20px 15px 15px 15px;
+  outline: none;
+  font-family: 'Raleway';
+  font-size: 24px;
+}
+
+input:focus {
+  border-bottom: 2px solid #000000;
+}
+
+@media (max-width: 1025px) {
+  h1 {
+    font-size: 45px;
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 35px;
+  }
+
+  img {
+    width: 75px;
+    height: 75px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: x-small;
+  }
 }
