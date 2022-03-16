@@ -29,15 +29,17 @@
 
 h1 {
   font-family: 'Raleway';
-  margin-bottom: 15px;
   font-size: 55px;
+}
+
+.details {
+  margin: 15px 0 5px 30px;
 }
 
 p {
   font-family: 'Raleway';
   font-weight: 200;
   font-size: 20px;
-  margin: 0 0 5px 30px;
 }
 
 .student {
