@@ -27,9 +27,28 @@
   background: transparent;
 }
 
+.student-header {
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+}
+
 h1 {
   font-family: 'Raleway';
   font-size: 55px;
+  overflow-wrap: break-word;
+}
+
+button {
+  border: none;
+  color: #AAAAAA;
+  background-color: transparent;
+  font-size: 50px;
+}
+
+button:hover {
+  cursor: pointer;
+  color: #030304;
 }
 
 .details {
@@ -40,6 +59,10 @@ p {
   font-family: 'Raleway';
   font-weight: 200;
   font-size: 20px;
+}
+
+.grades {
+  margin-top: 15px;
 }
 
 .student {
@@ -58,7 +81,7 @@ img {
 
 .info {
   margin-left: 3%;
-  white-space: nowrap;
+  width: 100%;
 }
 
 .input-container {

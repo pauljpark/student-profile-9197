@@ -28,7 +28,7 @@ function App() {
     setSearchName(e.target.value)
   }
 
-  function List() {
+  const List = () => {
     return filteredList.map((student, i) => (
       <Student student={student} key={i} />
     ))
