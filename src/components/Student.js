@@ -3,6 +3,7 @@ import Grades from './Grades'
 
 function Student({student, studentKey}) {
     const [click, setClick] = useState(false)
+    const [tag, setTag] = useState('')
 
     // calculates grade average
     const average = (gradesArray) => {
@@ -14,7 +15,6 @@ function Student({student, studentKey}) {
 
     const handleClick = () => {
       setClick(!click);
-      console.log('asdf')
     }
 
       return (

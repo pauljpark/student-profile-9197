@@ -4,34 +4,27 @@ import './App.css';
 
 function App() {
   const [list, setList] = useState([])
-  const [ filteredList, setFilteredList ] = useState([])
   const [ searchName, setSearchName ] = useState('')
 
   useEffect(() => {
     fetch('https://api.hatchways.io/assessment/students')
     .then(res => res.json())
-    .then(json => setList(json.students))
+    .then(json => {
+      setList(json.students)
+    })
     .catch(err => console.log(err));
-
-    if (searchName === '') {
-      setFilteredList(list)
-    } else {
-      setFilteredList(
-        list.filter((student) =>
-          (student.firstName + student.lastName).toLowerCase().includes(searchName)
-        )
-      );
-    }
-  }, [list, searchName])
+  }, [])
 
   const handleOnChange = (e) => {
     setSearchName(e.target.value)
   }
 
   const List = () => {
-    return filteredList.map((student, i) => (
-      <Student student={student} key={i} />
-    ))
+      return list.filter((student) =>
+        (student.firstName + ' ' + student.lastName).toLowerCase().includes(searchName))
+        .map((student, i) => (
+          <Student student={student} key={i} />
+        ))
   }
 
   return (
