@@ -5,6 +5,7 @@ import './App.css';
 function App() {
   const [list, setList] = useState([])
   const [ searchName, setSearchName ] = useState('')
+  const [ tagName, setTagName ] = useState('')
 
   useEffect(() => {
     fetch('https://api.hatchways.io/assessment/students')
@@ -17,6 +18,10 @@ function App() {
 
   const handleOnChange = (e) => {
     setSearchName(e.target.value)
+  }
+
+  const handleTagOnChange = (e) => {
+    setTagName(e.target.value)
   }
 
   const List = () => {
@@ -32,6 +37,7 @@ function App() {
       <div className="list">
         <div className='input-container'>
           <input placeholder='Search by name' onChange={handleOnChange}/>
+          <input placeholder='Search by tag' onChange={handleTagOnChange}/>
         </div>
           <List />
         </div>
